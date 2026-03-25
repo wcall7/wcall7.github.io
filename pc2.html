@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="refresh" content="60">
+  <title>PC2 Latest Capture</title>
+</head>
+<body>
+  <img id="latest" src="capture_img/pc2/pc2_latest_capture.png" alt="PC2 latest image">
+  
+  <script>
+    // 페이지 로드 시마다 캐시를 무효화하기 위해 쿼리 문자열 추가
+    const img = document.getElementById("latest");
+    img.src = "capture_img/pc2/pc2_latest_capture.png?ts=" + Date.now();
+  </script>
+</body>
+</html>
