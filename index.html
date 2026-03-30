@@ -2,29 +2,153 @@
 <html lang="ko">
 <head>
   <meta charset="UTF-8">
+  <meta http-equiv="refresh" content="60">
   <title>Latest Captures</title>
+  <style>
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr); /* 3열 */
+      gap: 30px;
+      text-align: center;
+    }
+    .item h3 {
+      margin: 8px 0;
+      font-size: 14px;
+    }
+    .links div {
+      margin: 6px 0;
+    }
+    .links a {
+      margin: 0 5px;
+      color: blue;
+      text-decoration: underline;
+    }
+    .download-btn {
+      background: none;
+      border: none;
+      cursor: pointer;
+      vertical-align: middle;
+    }
+    .download-btn svg {
+      width: 18px;
+      height: 18px;
+      fill: #444;
+    }
+    .download-btn:hover svg {
+      fill: #000;
+    }
+  </style>
 </head>
 <body>
-  <h1> &nbsp;&nbsp;&nbsp; 최신 캡처 이미지 </h1>
-  <div>
-    <h3> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; PC1 최신 캡처 </h3>
-    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <a href="pc1.html">
-  <script>
-    document.write('<img src="capture_img/pc1/pc1_latest_capture.png?ts=' + Date.now() + '" alt="PC1 latest" width="150">');
-  </script>
-  </a><br>
-    <h3> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; PC2 최신 캡처 </h3>
-    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <a href="pc2.html">
-  <script>
-    document.write('<img src="capture_img/pc2/pc2_latest_capture.png?ts=' + Date.now() + '" alt="PC2 latest" width="150">');
-  </script>
-  </a><br>
-    <h3> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; PC3 최신 캡처 </h3>
-    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <a href="pc3.html">
-  <script>
-    document.write('<img src="capture_img/pc3/pc3_latest_capture.png?ts=' + Date.now() + '" alt="PC3 latest" width="150">');
-  </script>
-  </a>
+  <h1>최신 캡처 이미지</h1>
+
+  <div class="grid">
+    <!-- PC1~PC3 -->
+    <div class="item"><h3>PC1 최신 캡처</h3><a href="pc1.html"><img id="pc1" src="capture_img/pc1/pc1_latest_capture.png?ts=0" width="150"></a></div>
+    <div class="item"><h3>PC2 최신 캡처</h3><a href="pc2.html"><img id="pc2" src="capture_img/pc2/pc2_latest_capture.png?ts=0" width="150"></a></div>
+    <div class="item"><h3>PC3 최신 캡처</h3><a href="pc3.html"><img id="pc3" src="capture_img/pc3/pc3_latest_capture.png?ts=0" width="150"></a></div>
+    <!-- PHN, IPD, BAK -->
+    <div class="item"><h3>PHN 최신 캡처</h3><a href="phn.html"><img id="phn" src="capture_img/phn/phn_latest_capture.png?ts=0" width="150"></a></div>
+    <div class="item"><h3>IPD 최신 캡처</h3><a href="ipd.html"><img id="ipd" src="capture_img/ipd/ipd_latest_capture.png?ts=0" width="150"></a></div>
+    <div class="item"><h3>BAK 최신 캡처</h3><a href="bak.html"><img id="bak" src="capture_img/bak/bak_latest_capture.png?ts=0" width="150"></a></div>
+    <!-- PHO PNG, JPG -->
+    <div class="item"><h3>PHO 최신 캡처</h3><a href="pho.html"><img id="pho" src="capture_img/pho/pho_latest_capture.png?ts=0" width="150"></a></div>
+    <div class="item"><h3>PHO 최신 JPG</h3><a href="pho_jpg.html"><img id="pho_jpg" src="capture_img/pho/pho_latest_capture.jpg?ts=0" width="150"></a></div>
+    <!-- 파일 링크 -->
+    <div class="item links">
+      <h3>PHO 파일 링크</h3>
+      <div>
+        <a href="capture_img/pho/pho_latest_capture.txt" target="_blank" data-name="pho_latest_capture.txt" id="txtLink">TXT</a>
+        <button class="download-btn" data-link="txtLink">
+          <svg viewBox="0 0 24 24"><path d="M5 20h14v-2H5v2zm7-18v12l4-4h-3V2h-2v8H8l4 4z"/></svg>
+        </button>
+      </div>
+      <div>
+        <a href="capture_img/pho/pho_latest_capture.md" target="_blank" data-name="pho_latest_capture.md" id="mdLink">MD</a>
+        <button class="download-btn" data-link="mdLink">
+          <svg viewBox="0 0 24 24"><path d="M5 20h14v-2H5v2zm7-18v12l4-4h-3V2h-2v8H8l4 4z"/></svg>
+        </button>
+      </div>
+      <div>
+        <a href="capture_img/pho/pho_latest_capture.pdf" target="_blank" data-name="pho_latest_capture.pdf" id="pdfLink">PDF</a>
+        <button class="download-btn" data-link="pdfLink">
+          <svg viewBox="0 0 24 24"><path d="M5 20h14v-2H5v2zm7-18v12l4-4h-3V2h-2v8H8l4 4z"/></svg>
+        </button>
+      </div>
+      <div>
+        <a href="capture_img/pho/pho_latest_capture.html" target="_blank" data-name="pho_latest_capture.html" id="htmlLink">HTML</a>
+        <button class="download-btn" data-link="htmlLink">
+          <svg viewBox="0 0 24 24"><path d="M5 20h14v-2H5v2zm7-18v12l4-4h-3V2h-2v8H8l4 4z"/></svg>
+        </button>
+      </div>
+      <div>
+        ETC
+        <button class="download-btn" data-name="pho_latest_capture.etc" data-href="capture_img/pho/pho_latest_capture.etc">
+          <svg viewBox="0 0 24 24"><path d="M5 20h14v-2H5v2zm7-18v12l4-4h-3V2h-2v8H8l4 4z"/></svg>
+        </button>
+      </div>
+    </div>
   </div>
+
+  <script>
+    function refreshImage(id, path) {
+      const img = document.getElementById(id);
+      if (img) {
+        img.src = path + "?ts=" + Date.now();
+      }
+    }
+
+    // 이미지 자동 새로고침
+    ["pc1","pc2","pc3","phn","ipd","bak","pho","pho_jpg"].forEach(id=>{
+      const ext = id === "pho_jpg" ? "jpg" : "png";
+      refreshImage(id, `capture_img/${id.replace("_jpg","")}/${id}_latest_capture.${ext}`);
+    });
+    setInterval(() => {
+      ["pc1","pc2","pc3","phn","ipd","bak","pho","pho_jpg"].forEach(id=>{
+        const ext = id === "pho_jpg" ? "jpg" : "png";
+        refreshImage(id, `capture_img/${id.replace("_jpg","")}/${id}_latest_capture.${ext}`);
+      });
+    }, 60000);
+
+    // 다운로드 버튼 동작 (파일 존재 확인 → 에러 또는 이름 입력)
+    document.querySelectorAll('.download-btn').forEach(btn => {
+      btn.addEventListener('click', async (e) => {
+        e.preventDefault();
+        const linkId = btn.dataset.link;
+        let href, defaultName;
+        if (linkId) {
+          const link = document.getElementById(linkId);
+          href = link.href;
+          defaultName = link.dataset.name;
+        } else {
+          href = btn.dataset.href;
+          defaultName = btn.dataset.name;
+        }
+
+        try {
+          // 먼저 파일 존재 확인
+          const response = await fetch(href);
+          if (!response.ok) {
+            throw new Error(`파일을 찾을 수 없습니다 (HTTP ${response.status})`);
+          }
+
+          // 파일이 있으면 이름 입력창 띄움
+          const newName = prompt('저장할 파일 이름:', defaultName);
+          if (newName === null) return;
+          const finalName = newName.trim() === '' ? defaultName : newName;
+
+          const blob = await response.blob();
+          const a = document.createElement('a');
+          a.href = URL.createObjectURL(blob);
+          a.download = finalName;
+          a.click();
+          URL.revokeObjectURL(a.href);
+
+        } catch (err) {
+          alert(`다운로드 실패: ${err.message}`);
+        }
+      });
+    });
+  </script>
 </body>
 </html>
