@@ -6,12 +6,18 @@
   <title>PC1 Latest Capture</title>
 </head>
 <body>
-  <img id="latest" src="capture_img/pc1/pc1_latest_capture.png" alt="PC1 latest image">
+  <img id="latest" src="capture_img/pc1/pc1_latest_capture.png?ts=0" alt="PC1 latest image">
   
   <script>
-    // 페이지 로드 시마다 캐시를 무효화하기 위해 쿼리 문자열 추가
     const img = document.getElementById("latest");
+
+    // 페이지 로드 시 캐시 무효화
     img.src = "capture_img/pc1/pc1_latest_capture.png?ts=" + Date.now();
+
+    // 60초마다 이미지 src 갱신
+    setInterval(() => {
+      img.src = "capture_img/pc1/pc1_latest_capture.png?ts=" + Date.now();
+    }, 60000);
   </script>
 </body>
 </html>

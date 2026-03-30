@@ -2,29 +2,48 @@
 <html lang="ko">
 <head>
   <meta charset="UTF-8">
+  <meta http-equiv="refresh" content="60">
   <title>Latest Captures</title>
 </head>
 <body>
-  <h1> &nbsp;&nbsp;&nbsp; 최신 캡처 이미지 </h1>
+  <h1>&nbsp;&nbsp;&nbsp; 최신 캡처 이미지</h1>
   <div>
-    <h3> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; PC1 최신 캡처 </h3>
-    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <a href="pc1.html">
-  <script>
-    document.write('<img src="capture_img/pc1/pc1_latest_capture.png?ts=' + Date.now() + '" alt="PC1 latest" width="150">');
-  </script>
-  </a><br>
-    <h3> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; PC2 최신 캡처 </h3>
-    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <a href="pc2.html">
-  <script>
-    document.write('<img src="capture_img/pc2/pc2_latest_capture.png?ts=' + Date.now() + '" alt="PC2 latest" width="150">');
-  </script>
-  </a><br>
-    <h3> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; PC3 최신 캡처 </h3>
-    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <a href="pc3.html">
-  <script>
-    document.write('<img src="capture_img/pc3/pc3_latest_capture.png?ts=' + Date.now() + '" alt="PC3 latest" width="150">');
-  </script>
-  </a>
+    <h3>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; PC1 최신 캡처</h3>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    <a href="pc1.html">
+      <img id="pc1" src="capture_img/pc1/pc1_latest_capture.png?ts=0" alt="PC1 latest" width="150">
+    </a><br>
+
+    <h3>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; PC2 최신 캡처</h3>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    <a href="pc2.html">
+      <img id="pc2" src="capture_img/pc2/pc2_latest_capture.png?ts=0" alt="PC2 latest" width="150">
+    </a><br>
+
+    <h3>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; PC3 최신 캡처</h3>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    <a href="pc3.html">
+      <img id="pc3" src="capture_img/pc3/pc3_latest_capture.png?ts=0" alt="PC3 latest" width="150">
+    </a>
   </div>
+
+  <script>
+    function refreshImage(id, path) {
+      const img = document.getElementById(id);
+      img.src = path + "?ts=" + Date.now();
+    }
+
+    // 페이지 로드 시 캐시 무효화
+    refreshImage("pc1", "capture_img/pc1/pc1_latest_capture.png");
+    refreshImage("pc2", "capture_img/pc2/pc2_latest_capture.png");
+    refreshImage("pc3", "capture_img/pc3/pc3_latest_capture.png");
+
+    // 60초마다 이미지 src 갱신
+    setInterval(() => {
+      refreshImage("pc1", "capture_img/pc1/pc1_latest_capture.png");
+      refreshImage("pc2", "capture_img/pc2/pc2_latest_capture.png");
+      refreshImage("pc3", "capture_img/pc3/pc3_latest_capture.png");
+    }, 60000);
+  </script>
 </body>
 </html>
